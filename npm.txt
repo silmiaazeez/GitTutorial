@@ -1,0 +1,147 @@
+<pre><font color="#26A269"><b>vmadmin@vmadmin-VirtualBox</b></font>:<font color="#12488B"><b>~</b></font>$ sudo apt install npm
+[sudo] password for vmadmin: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu build-essential dpkg-dev eslint fakeroot g++ g++-13 g++-13-x86-64-linux-gnu
+  g++-x86-64-linux-gnu gcc gcc-13 gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu git git-man gyp handlebars javascript-common libalgorithm-diff-perl
+  libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan8 libbinutils libcc1-0 libctf-nobfd0 libctf0 libdpkg-perl liberror-perl libfakeroot
+  libfile-fcntllock-perl libgcc-13-dev libgprofng0 libhwasan0 libitm1 libjs-async libjs-events libjs-inherits libjs-is-typedarray libjs-prettify
+  libjs-regenerate libjs-source-map libjs-sprintf-js libjs-typedarray-to-buffer libjs-util liblsan0 libnode-dev libquadmath0 libre2-10 libsframe1
+  libssl-dev libstdc++-13-dev libtsan2 libubsan1 libuv1-dev lto-disabled-list make node-abbrev node-agent-base node-ajv node-ajv-keywords
+  node-ampproject-remapping node-ansi-escapes node-ansi-regex node-ansi-styles node-anymatch node-aproba node-archy node-are-we-there-yet
+  node-argparse node-arrify node-assert node-async node-async-each node-auto-bind node-babel-helper-define-polyfill-provider
+  node-babel-plugin-add-module-exports node-babel-plugin-lodash node-babel-plugin-polyfill-corejs2 node-babel-plugin-polyfill-corejs3
+  node-babel-plugin-polyfill-regenerator node-babel7 node-babel7-runtime node-balanced-match node-base node-base64-js node-binary-extensions
+  node-brace-expansion node-braces node-browserslist node-builtins node-cacache node-cache-base node-camelcase node-caniuse-lite node-chalk
+  node-chokidar node-chownr node-chrome-trace-event node-ci-info node-cli-boxes node-cli-cursor node-cli-table node-cli-truncate node-cliui
+  node-clone node-clone-deep node-collection-visit node-color-convert node-color-name node-colors node-columnify node-commander node-commondir
+  node-concat-stream node-console-control-strings node-convert-source-map node-copy-concurrently node-core-js node-core-js-compat node-core-js-pure
+  node-core-util-is node-coveralls node-css-loader node-css-selector-tokenizer node-data-uri-to-buffer node-debbundle-es-to-primitive node-debug
+  node-decamelize node-decompress-response node-deep-equal node-deep-is node-defaults node-define-properties node-define-property node-defined
+  node-del node-delegates node-depd node-diff node-doctrine node-electron-to-chromium node-encoding node-end-of-stream node-enhanced-resolve
+  node-err-code node-errno node-error-ex node-es-abstract node-es-module-lexer node-es6-error node-escape-string-regexp node-escodegen
+  node-eslint-scope node-eslint-utils node-eslint-visitor-keys node-espree node-esprima node-esquery node-esrecurse node-estraverse node-esutils
+  node-events node-fancy-log node-fast-deep-equal node-fast-levenshtein node-fetch node-file-entry-cache node-fill-range node-find-cache-dir
+  node-find-up node-flat-cache node-flatted node-for-in node-for-own node-foreground-child node-fs-readdir-recursive node-fs-write-stream-atomic
+  node-fs.realpath node-function-bind node-functional-red-black-tree node-gauge node-get-caller-file node-get-stream node-get-value node-glob
+  node-glob-parent node-globals node-globby node-got node-graceful-fs node-growl node-gyp node-has-flag node-has-unicode node-has-value
+  node-has-values node-hosted-git-info node-http-proxy-agent node-https-proxy-agent node-iconv-lite node-icss-utils node-ieee754 node-iferr
+  node-ignore node-imurmurhash node-indent-string node-inflight node-inherits node-ini node-interpret node-ip node-ip-regex node-is-arrayish
+  node-is-binary-path node-is-buffer node-is-descriptor node-is-extendable node-is-extglob node-is-glob node-is-number node-is-path-cwd
+  node-is-path-inside node-is-plain-obj node-is-plain-object node-is-primitive node-is-stream node-is-typedarray node-is-windows node-isarray
+  node-isexe node-isobject node-istanbul node-jest-debbundle node-jest-worker node-js-tokens node-js-yaml node-jsesc node-json-buffer
+  node-json-parse-better-errors node-json-schema node-json-schema-traverse node-json-stable-stringify node-json5 node-jsonify node-jsonparse
+  node-kind-of node-lcov-parse node-levn node-loader-runner node-locate-path node-lodash node-lodash-packages node-log-driver node-lowercase-keys
+  node-lru-cache node-make-dir node-map-visit node-memfs node-memory-fs node-merge-stream node-micromatch node-mime node-mime-types
+  node-mimic-response node-minimatch node-minimist node-minipass node-mixin-deep node-mkdirp node-move-concurrently node-ms node-mute-stream node-n3
+  node-negotiator node-neo-async node-nopt node-normalize-package-data node-normalize-path node-npm-bundled node-npm-package-arg node-npm-run-path
+  node-npmlog node-object-assign node-object-inspect node-object-visit node-once node-opener node-optimist node-optionator node-osenv
+  node-p-cancelable node-p-limit node-p-locate node-p-map node-parse-json node-pascalcase node-path-dirname node-path-exists node-path-is-absolute
+  node-path-is-inside node-path-type node-picocolors node-pify node-pkg-dir node-postcss node-postcss-modules-extract-imports
+  node-postcss-modules-values node-postcss-value-parser node-prelude-ls node-process-nextick-args node-progress node-promise-inflight
+  node-promise-retry node-promzard node-prr node-pump node-punycode node-quick-lru node-randombytes node-re2 node-read node-read-package-json
+  node-read-pkg node-readable-stream node-readdirp node-rechoir node-regenerate node-regenerate-unicode-properties node-regenerator-runtime
+  node-regenerator-transform node-regexpp node-regexpu-core node-regjsgen node-regjsparser node-repeat-string node-require-directory
+  node-require-from-string node-resolve node-resolve-cwd node-resolve-from node-restore-cursor node-resumer node-retry node-rimraf node-run-queue
+  node-safe-buffer node-schema-utils node-sellside-emitter node-semver node-serialize-javascript node-set-blocking node-set-immediate-shim
+  node-set-value node-shebang-command node-shebang-regex node-shell-quote node-signal-exit node-slash node-slice-ansi node-source-list-map
+  node-source-map node-source-map-support node-spdx-correct node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids node-sprintf-js
+  node-ssri node-stack-utils node-string-decoder node-string-width node-strip-ansi node-strip-bom node-strip-json-comments node-supports-color
+<pre>  node-tap node-tap-mocha-reporter node-tap-parser node-tapable node-tape node-tar node-terser node-text-table node-through node-time-stamp
+  node-to-fast-properties node-to-regex-range node-tslib node-type-check node-typedarray node-typedarray-to-buffer
+  node-unicode-canonical-property-names-ecmascript node-unicode-match-property-ecmascript node-unicode-match-property-value-ecmascript
+  node-unicode-property-aliases-ecmascript node-union-value node-unique-filename node-unset-value node-uri-js node-util node-util-deprecate
+  node-uuid node-v8-compile-cache node-v8flags node-validate-npm-package-license node-validate-npm-package-name node-watchpack node-wcwidth.js
+  node-webassemblyjs node-webpack-sources node-which node-wide-align node-widest-line node-wordwrap node-wrap-ansi node-wrappy node-write
+  node-write-file-atomic node-ws node-y18n node-yallist node-yaml node-yargs node-yargs-parser terser webpack
+Suggested packages:
+  binutils-doc gprofng-gui debian-keyring node-babel-eslint node-esprima-fb node-inquirer g++-multilib g++-13-multilib gcc-13-doc gcc-multilib
+  autoconf automake libtool flex bison gcc-doc gcc-13-multilib gcc-13-locales gdb-x86-64-linux-gnu git-daemon-run | git-daemon-sysvinit git-doc
+  git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn apache2 | lighttpd | httpd bzr libjs-angularjs libssl-doc libstdc++-13-doc make-doc
+  node-babel-plugin-polyfill-es-shims node-babel7-debug livescript chai node-jest-diff
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu build-essential dpkg-dev eslint fakeroot g++ g++-13 g++-13-x86-64-linux-gnu
+  g++-x86-64-linux-gnu gcc gcc-13 gcc-13-x86-64-linux-gnu gcc-x86-64-linux-gnu git git-man gyp handlebars javascript-common libalgorithm-diff-perl
+  libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan8 libbinutils libcc1-0 libctf-nobfd0 libctf0 libdpkg-perl liberror-perl libfakeroot
+  libfile-fcntllock-perl libgcc-13-dev libgprofng0 libhwasan0 libitm1 libjs-async libjs-events libjs-inherits libjs-is-typedarray libjs-prettify
+  libjs-regenerate libjs-source-map libjs-sprintf-js libjs-typedarray-to-buffer libjs-util liblsan0 libnode-dev libquadmath0 libre2-10 libsframe1
+  libssl-dev libstdc++-13-dev libtsan2 libubsan1 libuv1-dev lto-disabled-list make node-abbrev node-agent-base node-ajv node-ajv-keywords
+  node-ampproject-remapping node-ansi-escapes node-ansi-regex node-ansi-styles node-anymatch node-aproba node-archy node-are-we-there-yet
+  node-argparse node-arrify node-assert node-async node-async-each node-auto-bind node-babel-helper-define-polyfill-provider
+  node-babel-plugin-add-module-exports node-babel-plugin-lodash node-babel-plugin-polyfill-corejs2 node-babel-plugin-polyfill-corejs3
+  node-babel-plugin-polyfill-regenerator node-babel7 node-babel7-runtime node-balanced-match node-base node-base64-js node-binary-extensions
+  node-brace-expansion node-braces node-browserslist node-builtins node-cacache node-cache-base node-camelcase node-caniuse-lite node-chalk
+  node-chokidar node-chownr node-chrome-trace-event node-ci-info node-cli-boxes node-cli-cursor node-cli-table node-cli-truncate node-cliui
+  node-clone node-clone-deep node-collection-visit node-color-convert node-color-name node-colors node-columnify node-commander node-commondir
+  node-concat-stream node-console-control-strings node-convert-source-map node-copy-concurrently node-core-js node-core-js-compat node-core-js-pure
+  node-core-util-is node-coveralls node-css-loader node-css-selector-tokenizer node-data-uri-to-buffer node-debbundle-es-to-primitive node-debug
+  node-decamelize node-decompress-response node-deep-equal node-deep-is node-defaults node-define-properties node-define-property node-defined
+  node-del node-delegates node-depd node-diff node-doctrine node-electron-to-chromium node-encoding node-end-of-stream node-enhanced-resolve
+  node-err-code node-errno node-error-ex node-es-abstract node-es-module-lexer node-es6-error node-escape-string-regexp node-escodegen
+  node-eslint-scope node-eslint-utils node-eslint-visitor-keys node-espree node-esprima node-esquery node-esrecurse node-estraverse node-esutils
+  node-events node-fancy-log node-fast-deep-equal node-fast-levenshtein node-fetch node-file-entry-cache node-fill-range node-find-cache-dir
+  node-find-up node-flat-cache node-flatted node-for-in node-for-own node-foreground-child node-fs-readdir-recursive node-fs-write-stream-atomic
+  node-fs.realpath node-function-bind node-functional-red-black-tree node-gauge node-get-caller-file node-get-stream node-get-value node-glob
+  node-glob-parent node-globals node-globby node-got node-graceful-fs node-growl node-gyp node-has-flag node-has-unicode node-has-value
+  node-has-values node-hosted-git-info node-http-proxy-agent node-https-proxy-agent node-iconv-lite node-icss-utils node-ieee754 node-iferr
+  node-ignore node-imurmurhash node-indent-string node-inflight node-inherits node-ini node-interpret node-ip node-ip-regex node-is-arrayish
+  node-is-binary-path node-is-buffer node-is-descriptor node-is-extendable node-is-extglob node-is-glob node-is-number node-is-path-cwd
+  node-is-path-inside node-is-plain-obj node-is-plain-object node-is-primitive node-is-stream node-is-typedarray node-is-windows node-isarray
+  node-isexe node-isobject node-istanbul node-jest-debbundle node-jest-worker node-js-tokens node-js-yaml node-jsesc node-json-buffer
+  node-json-parse-better-errors node-json-schema node-json-schema-traverse node-json-stable-stringify node-json5 node-jsonify node-jsonparse
+  node-kind-of node-lcov-parse node-levn node-loader-runner node-locate-path node-lodash node-lodash-packages node-log-driver node-lowercase-keys
+  node-lru-cache node-make-dir node-map-visit node-memfs node-memory-fs node-merge-stream node-micromatch node-mime node-mime-types
+  node-mimic-response node-minimatch node-minimist node-minipass node-mixin-deep node-mkdirp node-move-concurrently node-ms node-mute-stream node-n3
+  node-negotiator node-neo-async node-nopt node-normalize-package-data node-normalize-path node-npm-bundled node-npm-package-arg node-npm-run-path
+  node-npmlog node-object-assign node-object-inspect node-object-visit node-once node-opener node-optimist node-optionator node-osenv
+  node-p-cancelable node-p-limit node-p-locate node-p-map node-parse-json node-pascalcase node-path-dirname node-path-exists node-path-is-absolute
+  node-path-is-inside node-path-type node-picocolors node-pify node-pkg-dir node-postcss node-postcss-modules-extract-imports
+  node-postcss-modules-values node-postcss-value-parser node-prelude-ls node-process-nextick-args node-progress node-promise-inflight
+  node-promise-retry node-promzard node-prr node-pump node-punycode node-quick-lru node-randombytes node-re2 node-read node-read-package-json
+  node-read-pkg node-readable-stream node-readdirp node-rechoir node-regenerate node-regenerate-unicode-properties node-regenerator-runtime
+  node-regenerator-transform node-regexpp node-regexpu-core node-regjsgen node-regjsparser node-repeat-string node-require-directory
+  node-require-from-string node-resolve node-resolve-cwd node-resolve-from node-restore-cursor node-resumer node-retry node-rimraf node-run-queue
+  node-safe-buffer node-schema-utils node-sellside-emitter node-semver node-serialize-javascript node-set-blocking node-set-immediate-shim
+  node-set-value node-shebang-command node-shebang-regex node-shell-quote node-signal-exit node-slash node-slice-ansi node-source-list-map
+  node-source-map node-source-map-support node-spdx-correct node-spdx-exceptions node-spdx-expression-parse node-spdx-license-ids node-sprintf-js
+  node-ssri node-stack-utils node-string-decoder node-string-width node-strip-ansi node-strip-bom node-strip-json-comments node-supports-color
+  node-tap node-tap-mocha-reporter node-tap-parser node-tapable node-tape node-tar node-terser node-text-table node-through node-time-stamp
+  node-to-fast-properties node-to-regex-range node-tslib node-type-check node-typedarray node-typedarray-to-buffer
+  node-unicode-canonical-property-names-ecmascript node-unicode-match-property-ecmascript node-unicode-match-property-value-ecmascript
+  node-unicode-property-aliases-ecmascript node-union-value node-unique-filename node-unset-value node-uri-js node-util node-util-deprecate
+  node-uuid node-v8-compile-cache node-v8flags node-validate-npm-package-license node-validate-npm-package-name node-watchpack node-wcwidth.js
+  node-webassemblyjs node-webpack-sources node-which node-wide-align node-widest-line node-wordwrap node-wrap-ansi node-wrappy node-write
+  node-write-file-atomic node-ws node-y18n node-yallist node-yaml node-yargs node-yargs-parser npm terser webpack
+0 upgraded, 429 newly installed, 0 to remove and 3 not upgraded.
+Need to get 75.6 MB of archives.
+After this operation, 345 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 binutils-common amd64 2.42-4ubuntu2 [239 kB]
+Get:2 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libsframe1 amd64 2.42-4ubuntu2 [14.8 kB]
+Get:3 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libbinutils amd64 2.42-4ubuntu2 [572 kB]
+Get:4 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libctf-nobfd0 amd64 2.42-4ubuntu2 [97.1 kB]
+Get:5 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libctf0 amd64 2.42-4ubuntu2 [94.5 kB]
+Get:6 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libgprofng0 amd64 2.42-4ubuntu2 [851 kB]
+Get:7 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 binutils-x86-64-linux-gnu amd64 2.42-4ubuntu2 [2,469 kB]
+<font color="#A2734C">4% [7 binutils-x86-64-linux-gnu 1,617 kB/2,469 kB 65%]                                                                              461 kB/s </font>Get:8 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 binutils amd64 2.42-4ubuntu2 [18.0 kB]                                           
+Get:9 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libcc1-0 amd64 14-20240412-0ubuntu1 [47.7 kB]                                    
+Get:10 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libitm1 amd64 14-20240412-0ubuntu1 [28.9 kB]                                    
+Get:11 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libasan8 amd64 14-20240412-0ubuntu1 [3,024 kB]                                  
+Ign:11 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libasan8 amd64 14-20240412-0ubuntu1                                             
+Get:12 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 liblsan0 amd64 14-20240412-0ubuntu1 [1,313 kB]                                  
+Get:13 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libtsan2 amd64 14-20240412-0ubuntu1 [2,736 kB]                                     
+<font color="#A2734C">7% [13 libtsan2 146 kB/2,736 kB 5%]                                                                                          107% [13 libtsan2 194 kB/2,736 kB 7%]                                                                         109 k7% [13 libtsan2 275 kB/2,736 kB 10%]                                                                 109 kB/s 17% [13 libtsan2 340 kB/2,736 kB 12%]                                                              109 kB/s 10</font>Get:14 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libubsan1 amd64 14-20240412-0ubuntu1 [1,175 kB]       
+<font color="#A2734C">11% [14 libubsan1 974 kB/1,175 kB 83%]                                                            270 kB/s 4min 5s</font>^<font color="#A2734C">11% [14 libubsan1 1,038 kB/1,175 kB 88%]                                                          270 kB/s 4min 4s</font>^<font color="#A2734C">11% [14 libubsan1 1,103 kB/1,175 kB 94%]                                                          270 kB/s 4min 4s</font>^11% [14 libubsan1 1,168 kB/1,175 kB 99%]               <font color="#A2734C">                                           270 kB/s 4min 4s</font>^Get:15 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libhwasan0 amd64 14-20240412-0ubuntu1 [1,632 kB]      
+<font color="#A2734C">11% [15 libhwasan0 53.2 kB/1,632 kB 3%]                                                           270 kB/s 4min 4s</font>^11% [15 libhwasan0 123 kB/1,632 kB 8%]                                               <font color="#A2734C">             270 kB/s 4min 3s</font>^Get:16 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libquadmath0 amd64 14-20240412-0ubuntu1 [153 kB]      
+Get:17 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libgcc-13-dev amd64 13.2.0-23ubuntu4 [2,688 kB]       
+<font color="#A2734C">15% [17 libgcc-13-dev 2,422 kB/2,688 kB 90%]                                                     129 kB/s 7min 57s</font>^<font color="#A2734C">15% [17 libgcc-13-dev 2,487 kB/2,688 kB 93%]                                                     129 kB/s 7min 56s</font>^<font color="#A2734C">16% [17 libgcc-13-dev 2,551 kB/2,688 kB 95%]                                                     129 kB/s 7min 56s</font>^Get:18 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 gcc-13-x86-64-linux-gnu amd64 13.2.0-23ubuntu4 [21.9 MB]
+<font color="#A2734C">19% [18 gcc-13-x86-64-linux-gnu 3,427 kB/21.9 MB 16%]                                                          129 kB/s 7min 319% [18 gcc-13-x86-64-linux-gnu 3,492 kB/21.9 MB 16%]                                                       129 kB/s 7min 20% [18 gcc-13-x86-64-linux-gnu 20% 29% [18 gcc-13-x86-64-linux-gnu 12.8 MB/21.9 MB 58%]  29% [18 gcc-13-x29% [18 34% [18 gcc-13-x86-64-linux-gnu 17.3 M</font>Get:19 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 gcc-13 amd64 13.2.0-23ubuntu4 [482 kB]                                                                                                     
+Ign:19 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 gcc-13 amd64 13.2.0-23ubuntu4                                                                                                              
+Get:20 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 gcc-x86-64-linux-gnu amd64 4:13.2.0-7ubuntu1 [1,212 B]                                                                                     
+Get:21 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 gcc amd64 4:13.2.0-7ubuntu1 [5,018 B]                                                                                                      
+Get:22 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 libstdc++-13-dev amd64 13.2.0-23ubuntu4 [2,399 kB]                                                                                         
+Get:23 http://qa.archive.ubuntu.com/ubuntu noble/main amd64 g++-13-x86-64-linux-gnu amd64 13.2.0-23ubuntu4 [12.5 MB]                                                                                   
+<font color="#A2734C">48% [23 g++-13-x86-64-linux-gnu 5,764 kB/12.5 MB 46%]                                                                                                                                  129 kB/s 4min 3s</font>^C
+</pre>
