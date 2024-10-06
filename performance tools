@@ -1,0 +1,177 @@
+Performance monitoring is crucial for managing virtualized environments, and tools like virt-top, htop, and vmstat provide valuable insights into how resources are being utilized. Here's an overview of each tool and how you can use them to monitor system and virtual machine (VM) performance in libvirt/KVM environments.
+1. virt-top
+
+virt-top is a monitoring tool specifically designed for virtual environments running on libvirt. It provides real-time statistics on CPU, memory, disk, and network usage of virtual machines (VMs).
+Key Features:
+
+    Displays resource usage for VMs, including CPU, memory, disk, and network.
+    Supports multiple hypervisors through libvirt, such as KVM, QEMU, and Xen.
+    Works similarly to the Linux top command but for virtual machines.
+
+Installation:
+
+On most Linux distributions, you can install virt-top via the package manager:
+
+bash
+
+sudo apt install virt-top       # For Debian/Ubuntu-based distros
+sudo yum install virt-top       # For RHEL/CentOS
+sudo dnf install virt-top       # For Fedora
+
+Usage:
+
+To run virt-top, simply execute the command:
+
+bash
+
+virt-top
+
+By default, it displays a table of VM statistics with columns such as:
+
+    ID: VM ID.
+    Name: VM name.
+    CPU%: CPU usage.
+    MEM%: Memory usage.
+    NET RX/TX: Network receive/transmit traffic.
+    Block R/W: Disk I/O.
+
+You can filter, sort, and refresh data just like in the top command. Use the following shortcuts:
+
+    p: Sort by CPU usage.
+    m: Sort by memory usage.
+    b: Sort by block I/O usage.
+    n: Sort by network usage.
+    q: Quit the tool.
+
+Example Output:
+
+text
+
+ ID   Name                 State      CPU(%)     MEM(k)    MEM(%)  NET RX/TX(k)   Block R/W(k)
+  1    VM1                 running     10.0       2097152    50.0     100/200       5000/1000
+  2    VM2                 running      5.0       1048576    25.0      50/100       2000/500
+
+2. htop
+
+htop is a more general, interactive process monitoring tool that provides detailed real-time data about CPU, memory, and process activity on the host system. While it doesn’t specifically monitor VMs, it helps you analyze overall host performance, which is essential when running multiple VMs on a single server.
+Key Features:
+
+    Displays a detailed overview of CPU, memory, and swap usage.
+    Shows all running processes in real time, including their CPU and memory consumption.
+    Allows you to sort and filter processes, terminate tasks, and monitor system load in a user-friendly interface.
+
+Installation:
+
+bash
+
+sudo apt install htop       # For Debian/Ubuntu-based distros
+sudo yum install htop       # For RHEL/CentOS
+sudo dnf install htop       # For Fedora
+
+Usage:
+
+To run htop, use the following command:
+
+bash
+
+htop
+
+In htop, you can observe:
+
+    CPU usage: Each core’s utilization.
+    Memory usage: Total memory consumption, including buffers and caches.
+    Swap usage: Information on swap usage.
+    Load average: System load for the past 1, 5, and 15 minutes.
+
+You can interact with the UI using these shortcuts:
+
+    F5: Tree view to see parent/child process hierarchy.
+    F6: Sort by various criteria (e.g., CPU, memory, PID).
+    F9: Kill a selected process.
+    F2: Configure appearance and settings.
+
+Example Output:
+
+text
+
+CPU[|||||||||||||     50%]  Tasks: 150, 1 running
+Mem[|||||||||         4.5G/8G]  Load average: 0.50, 0.60, 0.70
+Swap[                0.0G/2G]
+
+This information can help you understand how VMs are impacting the overall system performance.
+3. vmstat
+
+vmstat is a lightweight tool for monitoring system performance, focusing on CPU, memory, and I/O activities. It's more of a system-wide performance analysis tool rather than a virtual machine-specific monitor. It can be used to detect performance bottlenecks and provides quick snapshots of various system metrics.
+Key Features:
+
+    Reports on processes, memory, swap, I/O, system interrupts, and CPU activity.
+    Allows you to view real-time system performance and historical trends if run over a period.
+    Provides a concise, numerical output that can be used in scripts for further analysis.
+
+Installation:
+
+vmstat is usually included in the procps package, which is installed by default in most Linux distributions. If not, you can install it via:
+
+bash
+
+sudo apt install procps     # For Debian/Ubuntu-based distros
+sudo yum install procps     # For RHEL/CentOS
+sudo dnf install procps     # For Fedora
+
+Usage:
+
+You can run vmstat with the following syntax:
+
+bash
+
+vmstat [delay] [count]
+
+For example, to get real-time performance data every 2 seconds:
+
+bash
+
+vmstat 2
+
+Key Columns Explained:
+
+    procs (r, b):
+        r: Number of processes waiting to run (run queue).
+        b: Number of processes in uninterruptible sleep (usually waiting for I/O).
+    memory (swpd, free, buff, cache):
+        swpd: Amount of swap used.
+        free: Free memory.
+        buff: Buffer memory used by kernel.
+        cache: Cache memory used by the system.
+    swap (si, so):
+        si: Swap in (from disk to RAM).
+        so: Swap out (from RAM to disk).
+    io (bi, bo):
+        bi: Blocks received from a block device.
+        bo: Blocks sent to a block device.
+    system (in, cs):
+        in: Number of interrupts per second.
+        cs: Number of context switches per second.
+    cpu (us, sy, id, wa):
+        us: User CPU time.
+        sy: System CPU time.
+        id: Idle CPU time.
+        wa: I/O wait time.
+
+Example Output:
+
+text
+
+procs -----------memory---------- ---swap-- -----io---- --system-- ----cpu----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa
+ 1  0      0  200000  30000 100000    0    0     5     3  200  300 10  5 85  0
+
+This provides a snapshot of the system at that moment, helping you detect high I/O wait, memory usage, or CPU usage.
+Summary
+Tool	Use Case	Focus	Best For
+virt-top	Monitoring resource usage of VMs in libvirt	CPU, memory, network, disk I/O	Detailed VM statistics
+htop	Monitoring system-wide processes and performance	CPU, memory, processes	General system health
+vmstat	Monitoring low-level system performance	CPU, memory, I/O, swap	Quick system health overview
+
+    virt-top is ideal for tracking performance across VMs managed by libvirt.
+    htop is great for an overall view of system health, especially when you want a visual breakdown of processes and memory usage.
+    vmstat offers a quick snapshot of system resource usage and is useful for detecting bottlenecks at the system level.
