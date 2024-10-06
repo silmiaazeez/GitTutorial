@@ -1,0 +1,117 @@
+Here’s a basic bash script to automate the creation and configuration of a new virtual machine (VM) in a libvirt (KVM/QEMU) environment. This script uses virt-install to define resources like CPU, memory, disk, network, and the operating system to be installed.
+Bash Script for VM Creation and Configuration:
+
+bash
+
+#!/bin/bash
+
+# VM Details
+VM_NAME="new_vm"
+MEMORY="2048"        # Memory in MB
+VCPUS="2"            # Number of CPU cores
+DISK_PATH="/var/lib/libvirt/images/${VM_NAME}.qcow2"
+DISK_SIZE="20G"      # Disk size
+NETWORK_BRIDGE="br0" # Bridge network interface
+ISO_PATH="/var/lib/libvirt/boot/ubuntu.iso" # Path to the ISO file
+OS_VARIANT="ubuntu22.04" # OS variant (Use `osinfo-query os` for more options)
+INSTALL_SCRIPT="/var/lib/libvirt/boot/preseed.cfg" # Kickstart or preseed file (Optional)
+
+# Network Type (Bridge or NAT)
+NETWORK_TYPE="bridge"   # 'bridge' for bridged networking, 'network' for NAT network
+
+# Check if VM already exists
+if virsh dominfo "$VM_NAME" &>/dev/null; then
+    echo "VM $VM_NAME already exists. Exiting."
+    exit 1
+fi
+
+# Create the disk image
+echo "Creating disk image..."
+qemu-img create -f qcow2 "$DISK_PATH" "$DISK_SIZE"
+
+# Create the VM
+echo "Creating virtual machine..."
+virt-install \
+  --name="$VM_NAME" \
+  --memory="$MEMORY" \
+  --vcpus="$VCPUS" \
+  --disk path="$DISK_PATH",format=qcow2 \
+  --cdrom="$ISO_PATH" \
+  --os-variant="$OS_VARIANT" \
+  --network $NETWORK_TYPE="$NETWORK_BRIDGE",model=virtio \
+  --graphics vnc,listen=0.0.0.0 \
+  --noautoconsole \
+  --boot hd,cdrom \
+  --autostart
+
+# If using a preseed/kickstart file for automatic OS installation (Optional)
+if [[ -n "$INSTALL_SCRIPT" ]]; then
+    echo "Using automated installation script: $INSTALL_SCRIPT"
+    virt-install \
+      --name="$VM_NAME" \
+      --memory="$MEMORY" \
+      --vcpus="$VCPUS" \
+      --disk path="$DISK_PATH",format=qcow2 \
+      --cdrom="$ISO_PATH" \
+      --os-variant="$OS_VARIANT" \
+      --initrd-inject="$INSTALL_SCRIPT" \
+      --extra-args="ks=file:/$(basename "$INSTALL_SCRIPT")" \
+      --network $NETWORK_TYPE="$NETWORK_BRIDGE",model=virtio \
+      --graphics vnc,listen=0.0.0.0 \
+      --noautoconsole \
+      --boot hd,cdrom \
+      --autostart
+fi
+
+# Display VM details
+echo "Virtual machine $VM_NAME created successfully."
+virsh dominfo "$VM_NAME"
+
+Explanation of the Script:
+
+    VM Details: You can configure the VM name, memory, number of CPU cores, disk size, network settings, and OS installation ISO path at the start of the script.
+    ISO Image: The script assumes you have an ISO file ready in /var/lib/libvirt/boot/. Replace the path with your desired ISO.
+    Network Settings:
+        If you're using bridged networking, the network bridge interface is specified by NETWORK_BRIDGE="br0".
+        For NAT (default libvirt) network, you can set NETWORK_TYPE="network" and assign the default libvirt network.
+    Disk Creation: A new disk image is created with qemu-img in QCOW2 format.
+    virt-install:
+        --cdrom: Points to the ISO file for OS installation.
+        --os-variant: Sets the type of operating system you’re installing (check the correct variant using osinfo-query os).
+        --network: Uses either bridged (bridge) or NAT (network) networking with the specified model (virtio).
+        --graphics: Enables VNC graphics and makes the VM accessible over a VNC client.
+        --autostart: Ensures the VM will start automatically on host boot.
+    Preseed/Kickstart (Optional): If you want to automate the OS installation using a preseed or kickstart file, specify the location in INSTALL_SCRIPT.
+
+Notes:
+
+    Modify Network: If you want to use NAT instead of bridged networking, set NETWORK_TYPE="network" and adjust the network source as needed:
+
+    bash
+
+--network network=default,model=virtio
+
+OS Variants: Use the osinfo-query os command to get a list of valid OS variants based on the distribution you're installing:
+
+bash
+
+    osinfo-query os
+
+How to Run the Script:
+
+    Save the script to a file, e.g., create_vm.sh.
+    Make it executable:
+
+    bash
+
+chmod +x create_vm.sh
+
+Run the script:
+
+bash
+
+    sudo ./create_vm.sh
+
+Conclusion:
+
+This script automates the VM creation and configuration process with predefined resources and network settings using virt-install. You can customize it further based on your environment and requirements, such as adding more storage options, using cloud-init, or enhancing automation with preseed/kickstart files.
