@@ -1,0 +1,26 @@
+libvirt (KVM/QEMU)
+
+To take a snapshot using virsh with KVM/QEMU:
+
+    Take a live snapshot:
+
+    bash
+
+virsh snapshot-create-as --domain VM_Name "Snapshot_Name" \
+--description "Snapshot description" --disk-only --atomic
+
+    VM_Name: The name of your virtual machine.
+    Snapshot_Name: A name for the snapshot.
+    --disk-only: Snapshot only the VM's disk image, without memory state (use --memspec to include memory if needed).
+    --atomic: Ensures the snapshot is atomic, meaning it either succeeds entirely or fails without partial changes.
+
+List snapshots (optional):
+
+bash
+
+    virsh snapshot-list VM_Name
+
+Common Snapshot Concepts:
+
+    Snapshot: A snapshot saves the VM's disk state and, optionally, the memory state. It allows you to revert the VM to the exact point when the snapshot was taken.
+    Live Snapshot: This is a snapshot taken while the VM is running, capturing its current state without shutting it down.
