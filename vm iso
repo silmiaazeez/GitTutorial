@@ -1,0 +1,29 @@
+ libvirt (KVM/QEMU)
+Steps:
+
+    Create the VM (if you haven't already):
+
+    bash
+
+    virt-install \
+    --name=MyVM \
+    --ram=2048 \
+    --vcpus=2 \
+    --os-variant=ubuntu20.04 \
+    --disk path=/var/lib/libvirt/images/MyVM.qcow2,size=20 \
+    --cdrom=/path/to/os.iso \
+    --network network=default \
+    --graphics vnc
+
+        --cdrom: Path to the ISO image of the guest OS.
+        --disk: Path and size of the virtual hard drive.
+
+    Connect to the VM using VNC: Once the installation begins, you can connect to the VM via VNC (if --graphics vnc is used) or open the installation process via virt-manager for a graphical interface.
+
+    Proceed with Guest OS Installation: Follow the prompts within the guest OS installer.
+
+Common Steps Across Platforms:
+
+    Once the VM starts, it will boot from the ISO file (the installation media for your chosen OS).
+    Proceed with the installation of the OS by following the on-screen prompts, just like you would on a physical machine.
+    After installation, remove the ISO from the VM’s virtual CD/DVD drive to ensure that the VM boots from the hard disk.
