@@ -1,1 +1,31 @@
+sudo apt update
+sudo apt upgrade
+
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager
+---verify----
+
+lsmod | grep kvm
+sudo adduser $USER libvirt
+sudo adduser $USER kvm
+
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
+
+---Create a virtual machine
+
+sudo virt-install \
+  --name ubuntu-vm \
+  --ram 2048 \
+  --vcpus 2 \
+  --disk size=10 \
+  --os-variant ubuntu20.04 \
+  --cdrom /path/to/ubuntu.iso \
+  --network bridge=virbr0 \
+  --graphics vnc
+
+----
+sudo virt-manager
+virsh list --all
+
+
 
