@@ -1,3 +1,27 @@
+virtualization on linux..
+
+egrep -c '(vmx|svm)' /proc/cpuinfo
+lsmod | grep kvm
+sudo adduser $USER kvm
+kvm-ok
+
+On VirtualBox:
+
+    Power off the VM.
+    Go to Settings → System → Processor.
+    Enable Enable Nested VT-x/AMD-V.
+If you are using other hypervisors (e.g., VirtualBox, Hyper-V, VMware), they may conflict with KVM. If you have Hyper-V enabled on Windows, for instance, you won’t be able to use KVM inside WSL2 or any other virtual machines.
+
+    Disable Hyper-V if necessary:
+        Open PowerShell as Administrator and run:
+
+        bash
+
+bcdedit /set hypervisorlaunchtype off
+
+Restart your computer.
+---------------
+
 sudo apt update
 sudo apt upgrade
 
