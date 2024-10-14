@@ -54,7 +54,7 @@ virsh clone --original Original_VM_Name --name New_VM_Name --file /var/lib/libvi
     Replace Original_VM_Name with the name of your source VM.
     Replace New_VM_Name with the name of the clone.
     Replace /var/lib/libvirt/images/New_VM_Disk.qcow2 with the path where you want to save the disk of the cloned VM.
-
+virsh clone --original linux2022 --name cloneLinux2022 --file /var/lib/libvirt/images/cloneLinux2022_Disk.qcow2
 Step 4: Verify the Clone
 
 To verify that the VM has been cloned successfully:
