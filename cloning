@@ -20,6 +20,7 @@ virsh clone --original Original_VM_Name --name New_VM_Name --file /path/to/new/d
     --name: The name for the new VM (clone).
     --file: The path where the new VM’s disk image will be stored. This should not overwrite the original VM's disk.
 
+virsh clone --original linux2022 --name cloneLinux2022 --file /var/lib/libvirt/images/cloneLinux2022_Disk.qcow2
 3. Step-by-Step Guide to Cloning
 Step 1: List Available VMs
 
