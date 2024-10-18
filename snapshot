@@ -24,3 +24,32 @@ Common Snapshot Concepts:
 
     Snapshot: A snapshot saves the VM's disk state and, optionally, the memory state. It allows you to revert the VM to the exact point when the snapshot was taken.
     Live Snapshot: This is a snapshot taken while the VM is running, capturing its current state without shutting it down.
+
+---------------------------------------------------------------------------------------------------------------
+
+sudo apt install apache2  # Ubuntu/Debian
+sudo nano /etc/apache2/apache2.conf  # Ubuntu/Debian
+sudo systemctl restart apache2  # Ubuntu/Debian
+sudo systemctl status apache2  # Ubuntu/Debian
+apache2 -v  # Ubuntu/Debian
+
+Process to Revert to a Previous Snapshot:
+
+    Take a Snapshot Before Modifying a VM:
+        This captures the current state of the VM, including its memory, disk state, and settings.
+        This allows you to revert to this state if something goes wrong after modifying the VM.
+
+    Modify the Virtual Machine:
+        Perform the required changes to the VM, such as installing software, changing configurations, etc.
+        If you face issues after modifications, you can restore the previous snapshot to revert to the state before the modification.
+
+    Revert to Previous Snapshot:
+        In your VM management tool (e.g., VMware, VirtualBox):
+            Go to the Snapshots section.
+            Select the previous snapshot (the snapshot before you made modifications).
+            Click Restore or Revert to go back to that exact state.
+        This process essentially discards any changes made since that snapshot and returns the VM to the state it was in at the time the snapshot was taken.
+
+Use Cases for Reverting to a Previous Snapshot:
+
+    Testing Software: When testing a new application, you can take a snapshot before installing it. If the application causes issues, revert to the previous snapshot.
